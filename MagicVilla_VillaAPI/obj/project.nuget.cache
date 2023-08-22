@@ -1,20 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "/4p6dyRub1DBtm/aAXLWT0LqVfiu9fvbj2SKQWOm5QzBnqkKGxKZ7OgpWi7uoQ+StB5sEJ2+c4ozkFzNgHKKYA==",
-  "success": false,
+  "dgSpecHash": "2RsTaWe50oMJUr86dPI0aJWJzkAd9uxlyFVNWVWd7GSfc5bzvq4Qlu1pnFqOx6JmMl0HX20EmAOO6/EzvDRLQg==",
+  "success": true,
   "projectFilePath": "C:\\Users\\HP\\source\\repos\\MagicVilla\\MagicVilla_VillaAPI\\MagicVilla_VillaAPI.csproj",
-  "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Error",
-      "message": "Failed to download package 'Microsoft.OpenApi.1.4.3' from 'https://api.nuget.org/v3-flatcontainer/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg'.\r\nAn error occurred while sending the request.\r\n  The remote name could not be resolved: 'api.nuget.org'"
-    },
-    {
-      "code": "NU1301",
-      "level": "Error",
-      "message": "Failed to retrieve information about 'Microsoft.OpenApi' from remote source 'https://api.nuget.org/v3-flatcontainer/microsoft.openapi/index.json'.",
-      "libraryId": "Microsoft.OpenApi"
-    }
-  ]
+  "expectedPackageFiles": [
+    "C:\\Users\\HP\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.10\\microsoft.aspnetcore.openapi.7.0.10.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
+  "logs": []
 }
