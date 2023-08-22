@@ -1,7 +1,6 @@
 ﻿using MagicVilla_VillaAPI.Data;
-using MagicVilla_VillaAPI.Models;
+using MagicVilla_VillaAPI.Logging;
 using MagicVilla_VillaAPI.Models.DTOs;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MagicVilla_VillaAPI.Controllers
@@ -11,10 +10,10 @@ namespace MagicVilla_VillaAPI.Controllers
     [ApiController]
     public class VillaAPIController : ControllerBase
     {
-        private readonly ILogger<VillaAPIController> _logger;
-        public VillaAPIController(ILogger<VillaAPIController> logger)
+        //private readonly ILogging _logger;
+        public VillaAPIController()
         {
-            _logger = logger;
+            //_logger = logger;
         }
 
 
@@ -22,7 +21,7 @@ namespace MagicVilla_VillaAPI.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         public ActionResult<IEnumerable<VillaDto>> GetVillas()
         {
-            _logger.LogInformation("Getting all villas");
+            //_logger.Log("Getting all villas", "");
             return Ok(VillaStore.villaList);
         }
 
@@ -36,7 +35,7 @@ namespace MagicVilla_VillaAPI.Controllers
         {
             if (id == 0)
             {
-                _logger.LogInformation("Get Villa Error with id" + id);
+                //_logger.Log("Get Villa Error with id" + id, "error");
                 return BadRequest();
             }
 
@@ -142,9 +141,9 @@ namespace MagicVilla_VillaAPI.Controllers
         [HttpPatch("{id:int}", Name = "PatchVilla")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IActionResult PatchVilla(int id, [FromBody] JsonPatchDocument<VillaDto> patchDto)
+        public IActionResult PatchVilla(int id /*[FromBody] JsonPatchDocument<VillaDto> patchDto*/)
         {
-            if (id == 0 || patchDto == null)
+            if (id == 0 /*|| patchDto == null*/)
                 return BadRequest();
             var villa = VillaStore
                         .villaList
@@ -152,7 +151,7 @@ namespace MagicVilla_VillaAPI.Controllers
             if (villa == null)
                 return NotFound();
 
-            patchDto.Applyp(villa, ModelState);
+            //patchDto.Applyp(villa, ModelState);
 
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
