@@ -8,6 +8,7 @@ namespace MagicVilla_VillaAPI.Models.DTOs
         [Required]
         [MaxLength(30)]
         public string Name { get; set; } = string.Empty;
+        [Required]
         public double Rate { get; set; }
         public string Details { get; set; } = string.Empty;
         public int Occupancy { get; set; }

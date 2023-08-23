@@ -1,6 +1,7 @@
 ﻿using MagicVilla_VillaAPI.Data;
 using MagicVilla_VillaAPI.Logging;
 using MagicVilla_VillaAPI.Models.DTOs;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MagicVilla_VillaAPI.Controllers
@@ -141,17 +142,18 @@ namespace MagicVilla_VillaAPI.Controllers
         [HttpPatch("{id:int}", Name = "PatchVilla")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IActionResult PatchVilla(int id /*[FromBody] JsonPatchDocument<VillaDto> patchDto*/)
+        public IActionResult PatchVilla(int id, [FromBody] JsonPatchDocument<VillaDto> patchDto)
         {
-            if (id == 0 /*|| patchDto == null*/)
+            if (id == 0 || patchDto == null)
                 return BadRequest();
+
             var villa = VillaStore
                         .villaList
                         .FirstOrDefault(v => v.Id == id);
             if (villa == null)
                 return NotFound();
 
-            //patchDto.Applyp(villa, ModelState);
+            //patchDto.ApplyTo(villa, ModelState);
 
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
