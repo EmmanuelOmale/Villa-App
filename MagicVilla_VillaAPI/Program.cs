@@ -22,7 +22,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultSQLConnection"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaualtSQLConnection"));
 });
 
 var app = builder.Build();
